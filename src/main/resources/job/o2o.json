@@ -1,0 +1,62 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 3
+      },
+      "errorLimit": {
+        "record": 0,
+        "percentage": 0.02
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "oraclereader",
+          "parameter": {
+            "username": "****",
+            "password": "****",
+            "column": [
+              "\"id\"",
+              "\"name\"",
+              "\"update_date\"",
+              "\"remark\""
+            ],
+            "connection": [
+              {
+                "table": [
+                  "\"student\""
+                ],
+                "jdbcUrl": [
+                  "jdbc:oracle:thin:@//****:1521/***"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "oraclewriter",
+          "parameter": {
+            "username": "****",
+            "password": "****",
+            "column": [
+              "\"id\"",
+              "\"name\"",
+              "\"update_date\"",
+              "\"remark\""
+            ],
+            "writeMode": "update(\"id\")",
+            "connection": [
+              {
+                "table": [
+                  "\"student1\""
+                ],
+                "jdbcUrl": "jdbc:oracle:thin:@//****:1521/***"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

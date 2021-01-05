@@ -1,0 +1,63 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 3
+      },
+      "errorLimit": {
+        "record": 0,
+        "percentage": 0.02
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "postgresqlreader",
+          "parameter": {
+            "username": "****",
+            "password": "****",
+            "column": [
+              "\"id\"",
+              "\"name\"",
+              "\"remark\"",
+              "\"update_time\""
+            ],
+            "splitPk": "",
+            "connection": [
+              {
+                "table": [
+                  "public.teacher"
+                ],
+                "jdbcUrl": [
+                  "jdbc:postgresql://****:5432/****"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "postgresqlwriter",
+          "parameter": {
+             "username": "****",
+             "password": "****",
+            "column": [
+              "\"id\"",
+              "\"name\"",
+              "\"remark\"",
+              "\"update_time\""
+            ],
+            "writeMode": "update(\"id\")",
+            "connection": [
+              {
+                "table": [
+                  "public.stu"
+                ],
+                "jdbcUrl": "jdbc:postgresql://****:5432/****"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 3
+
+      },
+      "errorLimit": {
+        "record": 0,
+        "percentage": 0.02
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "mysqlreader",
+          "parameter": {
+            "username": "****",
+            "password": "****",
+            "column": [
+              "`id`",
+              "`name`",
+              "`intro`",
+              "`career`",
+              "`level`",
+              "`avatar`",
+              "`sort`",
+              "`join_date`",
+              "`is_deleted`",
+              "`gmt_create`",
+              "`gmt_modified`"
+            ],
+            "splitPk": "",
+            "connection": [
+              {
+                "table": [
+                  "edu_teacher"
+                ],
+                "jdbcUrl": [
+                  "jdbc:mysql://****:3306/***?serverTimezone=GMT%2B8&characterEncoding=utf8"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+
+            "username": "****",
+            "password": "****",
+            "column": [
+              "`id`",
+              "`name`",
+              "`intro`",
+              "`career`",
+              "`level`",
+              "`avatar`",
+              "`sort`",
+              "`join_date`",
+              "`is_deleted`",
+              "`gmt_create`",
+              "`gmt_modified`"
+            ],
+            "writeMode": "update",
+            "connection": [
+              {
+                "table": [
+                  "edu_teacher"
+                ],
+                "jdbcUrl": "jdbc:mysql://****:3306/****?serverTimezone=GMT%2B8&characterEncoding=utf8"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
